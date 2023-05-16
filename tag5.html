@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+              function Account(code, name, moneys){
+                this.code = code;
+                this.name = name;
+                this.moneys = moneys;
+                //메소드 만들기
+                this.result = function(){return this.moneys;}
+                this.sum = function(money){this.moneys += money;}
+                this.minus = function(money){
+                    this.moneys -= money;
+                    return money;
+
+                }
+            }
+            let book_1 = new Account("HTML5","황기태","20000");
+            let book_2 = new Account("HTML5","황기태","20000");
+            let book_3 = new Account("HTML5","황기태","20000");
+            let book_4 = new Account("HTML5","황기태","20000");
+            let book_5 = new Account("HTML5","황기태","20000"); 
+        </script>
+    </head>
+    <body>
+        <h3>book 객체 배열 만들기</h3><hr>
+
+    </body>
+
+</html>
