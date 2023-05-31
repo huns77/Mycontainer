@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Array Webpage</title>
+</head>
+<body>
+  <h1>Book Array Webpage</h1>
+
+  <script>
+    // book 객체 생성자 함수
+    function Book(title, author, price) {
+      this.title = title;
+      this.author = author;
+      this.price = price;
+    }
+
+    // bookArray 생성
+    var bookArray = [];
+
+    // 5개의 책 정보를 입력받고 bookArray에 추가하는 함수
+    function addBooks() {
+      for (var i = 0; i < 5; i++) {
+        var bookInfo = prompt("콤마(,)로 분리하면서 책제목 저자 가격 순으로 입력 :");
+        var bookInfoArray = bookInfo.split(",");
+
+        var bookTitle = bookInfoArray[0].trim();
+        var bookAuthor = bookInfoArray[1].trim();
+        var bookPrice = parseFloat(bookInfoArray[2].trim());
+
+        var book = new Book(bookTitle, bookAuthor, bookPrice);
+        bookArray.push(book);
+
+        // 책 정보 출력
+        displayBookInfo(book);
+      }
+
+      // 가장 비싼 책 찾아 출력
+      findMostExpensiveBook();
+    }
+
+    // 책 정보를 화면에 출력하는 함수
+    function displayBookInfo(book) {
+      var bookInfo = document.createElement('p');
+      bookInfo.innerText = ": " + book.title + book.author + book.price.toFixed(2) + "\n";
+      document.body.appendChild(bookInfo);
+    }
+
+    // 가장 비싼 책을 찾아 출력하는 함수
+    function findMostExpensiveBook() {
+      var maxPrice = 0;
+      var mostExpensiveBook = null;
+
+      for (var i = 0; i < bookArray.length; i++) {
+        var book = bookArray[i];
+        if (book.price > maxPrice) {
+          maxPrice = book.price;
+          mostExpensiveBook = book;
+        }
+      }
+
+      if (mostExpensiveBook) {
+        var result = document.createElement('p');
+        result.innerText = "가장 가격이 비싼 책은 " + mostExpensiveBook.title;
+        document.body.appendChild(result);
+      } else {
+        alert("책을 찾을 수 없습니다." );
+      }
+    }
+
+    // 페이지 로드 시 자동으로 prompt() 함수 호출
+    addBooks();
+  </script>
+</body>
+</html>
