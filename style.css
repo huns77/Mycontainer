@@ -1,3 +1,4 @@
+
 body{
     margin:0;
   }
@@ -14,14 +15,13 @@ body{
   ol{
     border-right:1px solid gray;
     margin:0;
-    padding:20px;
   }
   #grid{
     display: grid;
     grid-template-columns: 150px 1fr;
   }
   #grid ol{
-    padding-left:33px;
+    padding-left:5px;
   }
   #grid #article{
     padding-left:25px;
@@ -44,4 +44,21 @@ body{
 }
 .ex{
   width: 50%;
+}
+#night_day {
+  float: right;
+  width: 100px;
+  height: 50px;
+}
+.menu li{
+  list-style: none;
+  padding: 22px;
+  text-align: center;
+  transition: 0.6s;
+}
+ol .menu{
+   padding-right: 24px;
+}
+.menu li:hover{
+  background-color: dodgerblue;
 }
