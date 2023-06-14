@@ -41,7 +41,7 @@
     // 책 정보를 화면에 출력하는 함수
     function displayBookInfo(book) {
       var bookInfo = document.createElement('p');
-      bookInfo.innerText = ": " + book.title + book.author + book.price.toFixed(2) + "\n";
+      bookInfo.innerText = book.title + book.author + Math.round(book.price.toFixed(2)) + "\n";
       document.body.appendChild(bookInfo);
     }
 
